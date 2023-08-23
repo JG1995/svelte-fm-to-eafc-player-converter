@@ -50,6 +50,15 @@
     export let GKKicking = 0;
     export let GKPositioning = 0;
     export let GKReflexes = 0;
+
+    function getBackgroundColor(value) {
+        if (value < 50) return '#C92A2A';
+        if (value >= 50 && value < 59) return '#D95C0F';
+        if (value >= 60 && value < 69) return '#E6B600';
+        if (value >= 70 && value < 79) return '#66A80F';
+        if (value >= 80) return '#0C8539';
+        return 'white';  // Default color
+    }
 </script>
 
 <div class="h-[80px] w-[994px] bg-[#6B728E] grid grid-cols-[70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px]
@@ -64,7 +73,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
         <div class="font-bold text-center pb-[8px] pt-[3px]">
             Overall
         </div>
-        <div class="text-center bg-white bg-opacity-20 py-1 px-2 rounded">
+        <div class="text-center py-1 px-2 rounded"
+             style="background-color: {getBackgroundColor(85)};">
             85
         </div>
     </div>
@@ -99,7 +109,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
         <div class="font-bold text-center pb-[8px] pt-[3px]">
             Pace
         </div>
-        <div class="text-center bg-white bg-opacity-20 py-1 px-2 rounded">
+        <div class="text-center py-1 px-2 rounded"
+             style="background-color: {getBackgroundColor(75)};">
             75
         </div>
     </div>
@@ -109,7 +120,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
         <div class="font-bold text-center pb-[8px] pt-[3px]">
             Shooting
         </div>
-        <div class="text-center bg-white bg-opacity-20 py-1 px-2 rounded">
+        <div class="text-center py-1 px-2 rounded"
+             style="background-color: {getBackgroundColor(75)};">
             75
         </div>
     </div>
@@ -119,7 +131,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
         <div class="font-bold text-center pb-[8px] pt-[3px]">
             Passing
         </div>
-        <div class="text-center bg-white bg-opacity-20 py-1 px-2 rounded">
+        <div class="text-center py-1 px-2 rounded"
+             style="background-color: {getBackgroundColor(78)};">
             78
         </div>
     </div>
@@ -129,7 +142,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
         <div class="font-bold text-center pb-[8px] pt-[3px]">
             Dribbling
         </div>
-        <div class="text-center bg-white bg-opacity-20 py-1 px-2 rounded">
+        <div class="text-center py-1 px-2 rounded"
+             style="background-color: {getBackgroundColor(84)};">
             84
         </div>
     </div>
@@ -139,7 +153,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
         <div class="font-bold text-center pb-[8px] pt-[3px]">
             Defence
         </div>
-        <div class="text-center bg-white bg-opacity-20 py-1 px-2 rounded">
+        <div class="text-center py-1 px-2 rounded"
+             style="background-color: {getBackgroundColor(77)};">
             77
         </div>
     </div>
@@ -149,7 +164,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
         <div class="font-bold text-center pb-[8px] pt-[3px]">
             Physical
         </div>
-        <div class="text-center bg-white bg-opacity-20 py-1 px-2 rounded">
+        <div class="text-center py-1 px-2 rounded"
+             style="background-color: {getBackgroundColor(80)};">
             80
         </div>
     </div>
