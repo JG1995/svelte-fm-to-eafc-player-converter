@@ -86,7 +86,7 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
         <!-- Place for 4 lines of text in div-6 -->
         <div class="flex justify-between w-full">
             <span>Height:</span>
-            <span>{player.Height};</span>
+            <span>{player.Height}</span>
         </div>
 
         <div class="flex justify-between w-full">
