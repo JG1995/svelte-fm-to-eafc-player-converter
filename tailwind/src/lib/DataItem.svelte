@@ -1,5 +1,5 @@
 <script>
-    export let firstname = "";
+/*    export let firstname = "";
     export let lastname = "";
     export let overall = 0;
     export let birthday = "";
@@ -49,7 +49,9 @@
     export let GKHandling = 0;
     export let GKKicking = 0;
     export let GKPositioning = 0;
-    export let GKReflexes = 0;
+    export let GKReflexes = 0;*/
+
+    export let player;
 
     function getBackgroundColor(value) {
         if (value < 50) return '#C92A2A';
@@ -84,12 +86,12 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
         <!-- Place for 4 lines of text in div-6 -->
         <div class="flex justify-between w-full">
             <span>Height:</span>
-            <span>186cm</span>
+            <span>{player.Height};</span>
         </div>
 
         <div class="flex justify-between w-full">
             <span>Weight:</span>
-            <span>75kg</span>
+            <span>{player.Weight}</span>
         </div>
 
         <div class="flex justify-between w-full">
@@ -110,8 +112,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Pace
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(75)};">
-            75
+             style="background-color: {getBackgroundColor(player.Pac*5)};">
+            {player.Pac*5}
         </div>
     </div>
 
@@ -121,8 +123,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Shooting
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(75)};">
-            75
+             style="background-color: {getBackgroundColor(player.Fin*5)};">
+            {player.Fin*5}
         </div>
     </div>
 
@@ -132,8 +134,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Passing
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(78)};">
-            78
+             style="background-color: {getBackgroundColor(player.Pas*5)};">
+            {player.Pas*5}
         </div>
     </div>
 
@@ -143,8 +145,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Dribbling
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(84)};">
-            84
+             style="background-color: {getBackgroundColor(player.Dri*5)};">
+            {player.Dri*5-1}
         </div>
     </div>
 
@@ -154,8 +156,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Defence
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(77)};">
-            77
+             style="background-color: {getBackgroundColor(player.Tck*5)};">
+            {player.Tck*5}
         </div>
     </div>
 
@@ -165,8 +167,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Physical
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(80)};">
-            80
+             style="background-color: {getBackgroundColor(player.Str*5)};">
+            {player.Str*5}
         </div>
     </div>
 </div>
