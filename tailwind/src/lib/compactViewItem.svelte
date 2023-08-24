@@ -1,56 +1,4 @@
 <script>
-/*    export let firstname = "";
-    export let lastname = "";
-    export let overall = 0;
-    export let birthday = "";
-    export let heightMetric = 0;
-    export let heightImperial = 0;
-    export let weightMetric = 0;
-    export let weightImperial = 0;
-    export let strongfoot = "";
-    export let weakfoot = 0;
-    export let skills = 0;
-    export let avgPace = 0;
-    export let avgShooting = 0;
-    export let avgPassing = 0;
-    export let avgDribbling = 0;
-    export let avgDefence = 0;
-    export let avgPhysical = 0;
-    export let crossing = 0;
-    export let finishing = 0;
-    export let headingAccuracy = 0;
-    export let shortPassing = 0;
-    export let volleys = 0;
-    export let dribbling = 0;
-    export let curve = 0;
-    export let freeKickAccuracy = 0;
-    export let longPassing = 0;
-    export let ballControl = 0;
-    export let acceleration = 0;
-    export let sprintSpeed = 0;
-    export let agility = 0;
-    export let reactions = 0;
-    export let balance = 0;
-    export let shotPower = 0;
-    export let jumping = 0;
-    export let stamina = 0;
-    export let strength = 0;
-    export let longShots = 0;
-    export let aggression = 0;
-    export let interceptions = 0;
-    export let positioning = 0;
-    export let vision = 0;
-    export let penalties = 0;
-    export let composure = 0;
-    export let defensiveAwareness = 0;
-    export let standingTackle = 0;
-    export let slidingTackle = 0;
-    export let GKDiving = 0;
-    export let GKHandling = 0;
-    export let GKKicking = 0;
-    export let GKPositioning = 0;
-    export let GKReflexes = 0;*/
-
     export let player;
 
     function getBackgroundColor(value) {
@@ -61,6 +9,22 @@
         if (value >= 80) return '#0C8539';
         return 'white';  // Default color
     }
+    function setFirstName() {
+        const parts = player.Name.split(' ');
+        if (parts.length === 1) {
+            return '';
+        }
+        return parts[0];
+    }
+
+    function setLastName() {
+        const parts = player.Name.split(' ');
+        if (parts.length === 1) {
+            return parts[0];
+        }
+        return parts.slice(1).join(' ');
+    }
+
 
     function setOverall(value) {
 
@@ -90,13 +54,21 @@
 
     }
 
+    function setWeakFoot(value) {
+
+    }
+
+    function setSkillMoves() {
+        return Math.ceil(player.Fla / 4)
+    }
+
 </script>
 
 <div class="h-[80px] w-[994px] bg-[#6B728E] grid grid-cols-[70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px]
 gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
     <div class="col-span-4 flex flex-col items-center justify-center">
         <!-- Place for name that spans divs 1, 2, 3, and 4 -->
-        Jude <br/> <b>Bellingham</b>
+        {setFirstName()} <br/> <b>{setLastName()}</b>
     </div>
 
     <!-- div 5 -->
@@ -130,7 +102,7 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
 
         <div class="flex justify-between w-full">
             <span>Skills:</span>
-            <span>4</span>
+            <span>{setSkillMoves()}</span>
         </div>
     </div>
 
