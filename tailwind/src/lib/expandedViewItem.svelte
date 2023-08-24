@@ -10,7 +10,13 @@
     export let player;
 </script>
 
-<div class="h-[332px] w-[994px] bg-[#50577A] grid grid-cols-[187px,187px,187px,187px,187px] grid-row-[159px,159px]
-gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
+<div class="h-auto w-[994px] bg-[#50577A] grid grid-cols-[187px,187px,187px,187px,187px]
+gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded p-[12px]">
+    <Attacking player={player}/>
+    <Attacking player={player}/>
+    <Attacking player={player}/>
+    <Attacking player={player}/>
+    <Attacking player={player}/>
+    <Attacking player={player}/>
     <Attacking player={player}/>
 </div>
