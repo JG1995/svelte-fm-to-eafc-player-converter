@@ -61,6 +61,35 @@
         if (value >= 80) return '#0C8539';
         return 'white';  // Default color
     }
+
+    function setOverall(value) {
+
+    }
+
+    function setAvgPace(value) {
+
+    }
+
+    function setAvgShooting(value) {
+
+    }
+
+    function setAvgPassing(value) {
+
+    }
+
+    function setAvgDribbling(value) {
+
+    }
+
+    function setAvgDefence(value) {
+
+    }
+
+    function setAvgPhysical(value) {
+
+    }
+
 </script>
 
 <div class="h-[80px] w-[994px] bg-[#6B728E] grid grid-cols-[70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px]
