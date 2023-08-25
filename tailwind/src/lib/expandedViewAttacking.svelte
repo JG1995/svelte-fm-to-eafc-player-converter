@@ -11,23 +11,23 @@
     }
 
     function setCrossing() {
-        return Math.round(((player.Cro*0.75) + (player.Cor*0.2) + (player.Fre*0.05))*5)
+        return Math.min(99, Math.round(((player.Cro*0.75) + (player.Cor*0.2) + (player.Fre*0.05))*5.5) + Math.floor(Math.random() * 3) - 1);
     }
 
     function setFinishing() {
-        return Math.round(((player.Fin*0.53) + (player.OtB*0.26) + (player.Lon*0.13) + (player.Fla*0.08))*5)
+        return Math.min(99, Math.round(((player.Fin*0.53) + (player.OtB*0.26) + (player.Lon*0.13) + (player.Fla*0.08))*5.5) + Math.floor(Math.random() * 3) - 1);
     }
 
     function setHeadingAccuracy() {
-        return Math.round(((player.Hea*0.6) + (player.Jum*0.2) + (player.Str*0.2))*5)
+        return Math.min(99, Math.round(((player.Hea * 0.6) + (player.Jum * 0.2) + (player.Str * 0.2)) * 5.5) + Math.floor(Math.random() * 3) - 1);
     }
 
     function setShortPassing() {
-        return Math.round(((player.Pas*0.5) + (player.Vis*0.20) + (player.Fir*0.05) + (player.Dec*0.20) + (player.Com*0.05))*5)
+        return Math.min(99, Math.round(((player.Pas*0.5) + (player.Vis*0.20) + (player.Fir*0.05) + (player.Dec*0.20) + (player.Com*0.05))*5.5) + Math.floor(Math.random() * 3) - 1);
     }
 
     function setVolleys() {
-        return Math.round(((player.Fin*0.42) + (player.Tec*0.25) + (player.Lon*0.22) + (player.Fla*0.11))*5)
+        return Math.min(99, Math.round(((player.Fin*0.42) + (player.Tec*0.25) + (player.Lon*0.22) + (player.Fla*0.11))*5.5) + Math.floor(Math.random() * 3) - 1);
     }
 </script>
 

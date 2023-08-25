@@ -30,8 +30,11 @@
 
     }
 
-    function setAvgPace(value) {
+    function setAvgPace() {
+        let acceleration = Math.min(99, Math.round(((player.Acc*0.75) + (player.Agi*0.25))*5.5) + Math.floor(Math.random() * 3) - 1);
+        let sprintSpeed = Math.min(99, Math.round(((player.Pac*0.80) + (player.Bal*0.2))*5.5) + Math.floor(Math.random() * 3) - 1);
 
+        return Math.min(99, Math.round((sprintSpeed*0.55) + (acceleration*0.45)));
     }
 
     function setAvgShooting(value) {
@@ -54,8 +57,53 @@
 
     }
 
-    function setWeakFoot(value) {
+    function setStrongFoot(leftFoot, rightFoot) {
+        const strengthValues = {
+            'Very Weak': 1,
+            'Weak': 2,
+            'Reasonable': 3,
+            'Fairly Strong': 4,
+            'Strong': 5,
+            'Very Strong': 6
+        };
 
+        const leftStrength = strengthValues[leftFoot];
+        const rightStrength = strengthValues[rightFoot];
+
+        if (leftStrength > rightStrength) {
+            return 'Left Foot';
+        } else if (rightStrength > leftStrength) {
+            return 'Right Foot';
+        } else {
+            if (leftStrength === 6) { // Both are 'Very Strong'
+                return 'Either';
+            } else {
+                // If they have the same strength but aren't 'Very Strong',
+                // return the 'Left Foot' by default for simplicity.
+                return 'Left Foot';
+            }
+        }
+    }
+
+    function setWeakFoot(leftFoot, rightFoot) {
+        const stronger = setStrongFoot(leftFoot, rightFoot);
+
+        if (stronger === 'Either') return 5; // If both are 'Very Strong', return 5
+
+        // If not 'Either', find the weaker foot's strength and return its value
+        const strengthValue = {
+            'Very Weak': 1,
+            'Weak': 2,
+            'Reasonable': 3,
+            'Fairly Strong': 4,
+            'Strong': 4
+        };
+
+        if (stronger === 'Left Foot') {
+            return strengthValue[rightFoot];
+        } else {
+            return strengthValue[leftFoot];
+        }
     }
 
     function setSkillMoves() {
@@ -97,7 +145,7 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
 
         <div class="flex justify-between w-full">
             <span>Weak Foot:</span>
-            <span>4</span>
+            <span>{setWeakFoot(player["Left Foot"], player["Right Foot"])}</span>
         </div>
 
         <div class="flex justify-between w-full">
@@ -113,8 +161,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Pace
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(player.Pac*5)};">
-            {player.Pac*5}
+             style="background-color: {getBackgroundColor(setAvgPace())};">
+            {setAvgPace()}
         </div>
     </div>
 

@@ -7,16 +7,19 @@
     import Defending from './expandedViewDefending.svelte';
     import Goalkeeping from './expandedViewGoalkeeping.svelte';
     import Other from './expandedViewOther.svelte';
+    import Positions from './expandedViewPositions.svelte';
     export let player;
 </script>
 
 <div class="h-auto w-[994px] bg-[#50577A] grid grid-cols-[187px,187px,187px,187px,187px]
-gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded p-[12px]">
+gap-[14px] text-white font-pt-sans mb-[15px] items-start rounded p-[12px]">
     <Attacking player={player}/>
-    <Attacking player={player}/>
-    <Attacking player={player}/>
-    <Attacking player={player}/>
-    <Attacking player={player}/>
-    <Attacking player={player}/>
-    <Attacking player={player}/>
+    <Skill player={player}/>
+    <Movement player={player}/>
+    <Power player={player}/>
+    <Positions player={player}/>
+    <Mentality player={player}/>
+    <Defending player={player}/>
+    <Goalkeeping player={player}/>
+    <Other player={player}/>
 </div>
