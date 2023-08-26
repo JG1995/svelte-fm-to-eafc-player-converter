@@ -9,26 +9,6 @@
         if (value >= 80) return '#0C8539';
         return 'white';  // Default color
     }
-
-    function setShotPower() {
-        return Math.min(99, Math.round(((player.Str*0.5) + (player.Lon*0.3) + (player.Fin*0.2))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setJumping() {
-        return Math.min(99, Math.round(((player.Hea*0.6) + (player.Jum*0.4))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setStamina() {
-        return Math.min(99, Math.round(((player.Sta*0.5) + (player.Wor*0.25) + (player.Nat*0.25))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setStrength() {
-        return Math.min(99, Math.round(((player.Str*0.9) + (player.Jum*0.1))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setLongShots() {
-        return Math.min(99, Math.round(((player.Lon*0.6) + (player.Fin*0.25) + (player.Tec*0.15))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
 </script>
 
 <div class="flex flex-col gap-[5px]">
@@ -36,8 +16,8 @@
         Power
     </div>
     <div class="col-span-1 flex flex-row items-center">
-        <div class=" text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setShotPower())};">
-            {setShotPower()}
+        <div class=" text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.shotPower)};">
+            {player.shotPower}
         </div>
         <div class="text-center">
             Shot Power
@@ -45,8 +25,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setJumping())};">
-            {setJumping()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.jumping)};">
+            {player.jumping}
         </div>
         <div class="text-center">
             Jumping
@@ -54,8 +34,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setStamina())};">
-            {setStamina()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.stamina)};">
+            {player.stamina}
         </div>
         <div class="text-center">
             Stamina
@@ -63,8 +43,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setStrength())};">
-            {setStrength()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.strength)};">
+            {player.strength}
         </div>
         <div class="text-center">
             Strength
@@ -72,8 +52,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setLongShots())};">
-            {setLongShots()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.longShots)};">
+            {player.longShots}
         </div>
         <div class="text-center">
             Long Shots

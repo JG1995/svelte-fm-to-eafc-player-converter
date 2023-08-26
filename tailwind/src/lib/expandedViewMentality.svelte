@@ -9,30 +9,6 @@
         if (value >= 80) return '#0C8539';
         return 'white';  // Default color
     }
-
-    function setAggression() {
-        return Math.min(99, Math.round(((player.Agg*0.5) + (player.Bra*0.5))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setInterceptions() {
-        return Math.min(99, Math.round(((player.Pos*0.4) + (player.Mar*0.3) + (player.Ant*0.3))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setPositioning() {
-        return Math.min(99, Math.round(((player.OtB*0.7) + (player.Ant*0.3))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setVision() {
-        return Math.min(99, Math.round(((player.Vis*0.6) + (player.Dec*0.3) + (player.Fla*0.1))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setPenalties() {
-        return Math.min(99, Math.round(((player.Pen*0.5) + (player.Fin*0.25) + (player.Com*0.25))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setComposure() {
-        return Math.min(99, Math.round(((player.Com*0.6) + (player.Dec*0.3) + (player.Ant*0.1))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
 </script>
 
 <div class="flex flex-col gap-[5px]">
@@ -40,8 +16,8 @@
         Mentality
     </div>
     <div class="col-span-1 flex flex-row items-center">
-        <div class=" text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setAggression())};">
-            {setAggression()}
+        <div class=" text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.aggression)};">
+            {player.aggression}
         </div>
         <div class="text-center">
             Aggression
@@ -49,8 +25,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setInterceptions())};">
-            {setInterceptions()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.interceptions)};">
+            {player.interceptions}
         </div>
         <div class="text-center">
             Interceptions
@@ -58,8 +34,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setPositioning())};">
-            {setPositioning()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.positioning)};">
+            {player.positioning}
         </div>
         <div class="text-center">
             Positioning
@@ -67,8 +43,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setVision())};">
-            {setVision()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.vision)};">
+            {player.vision}
         </div>
         <div class="text-center">
             Vision
@@ -76,8 +52,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setPenalties())};">
-            {setPenalties()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.penalties)};">
+            {player.penalties}
         </div>
         <div class="text-center">
             Penalties
@@ -85,8 +61,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setComposure())};">
-            {setComposure()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.composure)};">
+            {player.composure}
         </div>
         <div class="text-center">
             Composure

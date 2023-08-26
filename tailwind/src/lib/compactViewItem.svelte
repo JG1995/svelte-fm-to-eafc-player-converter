@@ -9,114 +9,46 @@
         if (value >= 80) return '#0C8539';
         return 'white';  // Default color
     }
-    function setFirstName() {
-        const parts = player.Name.split(' ');
-        if (parts.length === 1) {
-            return '';
-        }
-        return parts[0];
-    }
-
-    function setLastName() {
-        const parts = player.Name.split(' ');
-        if (parts.length === 1) {
-            return parts[0];
-        }
-        return parts.slice(1).join(' ');
-    }
-
 
     function setOverall(value) {
 
     }
 
     function setAvgPace() {
-        let acceleration = Math.min(99, Math.round(((player.Acc*0.75) + (player.Agi*0.25))*5.5) + Math.floor(Math.random() * 3) - 1);
-        let sprintSpeed = Math.min(99, Math.round(((player.Pac*0.80) + (player.Bal*0.2))*5.5) + Math.floor(Math.random() * 3) - 1);
-
-        return Math.min(99, Math.round((sprintSpeed*0.55) + (acceleration*0.45)));
+        return Math.min(99, Math.round((player.sprintSpeed*0.55) + (player.acceleration*0.45)));
     }
 
-    function setAvgShooting(value) {
-
+    function setAvgShooting() {
+        return Math.min(99, Math.round((player.finishing*0.45) + (player.longShots*0.2) + (player.shotPower*0.2)
+            + (player.positioning*0.05) + (player.penalties*0.05) + (player.volleys*0.05)));
     }
 
-    function setAvgPassing(value) {
-
+    function setAvgPassing() {
+        return Math.min(99, Math.round((player.shortPassing*0.35) + (player.vision*0.2) + (player.crossing*0.2)
+            + (player.curve*0.05) + (player.freeKickAccuracy*0.05) + (player.longPassing*0.15)));
     }
 
-    function setAvgDribbling(value) {
-
+    function setAvgDribbling() {
+        return Math.min(99, Math.round((player.dribbling*0.5) + (player.ballControl*0.35) + (player.agility*0.1)
+            + (player.balance*0.05)));
     }
 
-    function setAvgDefence(value) {
-
+    function setAvgDefence() {
+        return Math.min(99, Math.round((player.defensiveAwareness*0.3) + (player.standingTackle*0.3) + (player.headingAccuracy*0.1)
+            + (player.interceptions*0.2) + (player.slidingTackle*0.1)));
     }
 
-    function setAvgPhysical(value) {
-
+    function setAvgPhysical() {
+        return Math.min(99, Math.round((player.strength*0.5) + (player.stamina*0.25) + (player.aggression*0.2)
+            + (player.jumping*0.05)));
     }
-
-    function setStrongFoot(leftFoot, rightFoot) {
-        const strengthValues = {
-            'Very Weak': 1,
-            'Weak': 2,
-            'Reasonable': 3,
-            'Fairly Strong': 4,
-            'Strong': 5,
-            'Very Strong': 6
-        };
-
-        const leftStrength = strengthValues[leftFoot];
-        const rightStrength = strengthValues[rightFoot];
-
-        if (leftStrength > rightStrength) {
-            return 'Left Foot';
-        } else if (rightStrength > leftStrength) {
-            return 'Right Foot';
-        } else {
-            if (leftStrength === 6) { // Both are 'Very Strong'
-                return 'Either';
-            } else {
-                // If they have the same strength but aren't 'Very Strong',
-                // return the 'Left Foot' by default for simplicity.
-                return 'Left Foot';
-            }
-        }
-    }
-
-    function setWeakFoot(leftFoot, rightFoot) {
-        const stronger = setStrongFoot(leftFoot, rightFoot);
-
-        if (stronger === 'Either') return 5; // If both are 'Very Strong', return 5
-
-        // If not 'Either', find the weaker foot's strength and return its value
-        const strengthValue = {
-            'Very Weak': 1,
-            'Weak': 2,
-            'Reasonable': 3,
-            'Fairly Strong': 4,
-            'Strong': 4
-        };
-
-        if (stronger === 'Left Foot') {
-            return strengthValue[rightFoot];
-        } else {
-            return strengthValue[leftFoot];
-        }
-    }
-
-    function setSkillMoves() {
-        return Math.ceil(player.Fla / 4)
-    }
-
 </script>
 
 <div class="h-[80px] w-[994px] bg-[#6B728E] grid grid-cols-[70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px]
 gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
     <div class="col-span-4 flex flex-col items-center justify-center">
         <!-- Place for name that spans divs 1, 2, 3, and 4 -->
-        {setFirstName()} <br/> <b>{setLastName()}</b>
+        {player.firstName} <br/> <b>{player.lastName}</b>
     </div>
 
     <!-- div 5 -->
@@ -135,22 +67,22 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
         <!-- Place for 4 lines of text in div-6 -->
         <div class="flex justify-between w-full">
             <span>Height:</span>
-            <span>{player.Height}</span>
+            <span>{player.height}</span>
         </div>
 
         <div class="flex justify-between w-full">
             <span>Weight:</span>
-            <span>{player.Weight}</span>
+            <span>{player.weight}</span>
         </div>
 
         <div class="flex justify-between w-full">
             <span>Weak Foot:</span>
-            <span>{setWeakFoot(player["Left Foot"], player["Right Foot"])}</span>
+            <span>{player.weakFoot}</span>
         </div>
 
         <div class="flex justify-between w-full">
             <span>Skills:</span>
-            <span>{setSkillMoves()}</span>
+            <span>{player.skillMoves}</span>
         </div>
     </div>
 
@@ -172,8 +104,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Shooting
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(player.Fin*5)};">
-            {player.Fin*5}
+             style="background-color: {getBackgroundColor(setAvgShooting())};">
+            {setAvgShooting()}
         </div>
     </div>
 
@@ -183,8 +115,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Passing
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(player.Pas*5)};">
-            {player.Pas*5}
+             style="background-color: {getBackgroundColor(setAvgPassing())};">
+            {setAvgPassing()}
         </div>
     </div>
 
@@ -194,8 +126,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Dribbling
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(player.Dri*5)};">
-            {player.Dri*5-1}
+             style="background-color: {getBackgroundColor(setAvgDribbling())};">
+            {setAvgDribbling()}
         </div>
     </div>
 
@@ -205,8 +137,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Defence
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(player.Tck*5)};">
-            {player.Tck*5}
+             style="background-color: {getBackgroundColor(setAvgDefence())};">
+            {setAvgDefence()}
         </div>
     </div>
 
@@ -216,8 +148,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Physical
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(player.Str*5)};">
-            {player.Str*5}
+             style="background-color: {getBackgroundColor(setAvgPhysical())};">
+            {setAvgPhysical()}
         </div>
     </div>
 </div>

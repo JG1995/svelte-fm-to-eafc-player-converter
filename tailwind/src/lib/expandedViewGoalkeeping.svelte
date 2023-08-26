@@ -9,26 +9,6 @@
         if (value >= 80) return '#0C8539';
         return 'white';  // Default color
     }
-
-    function setGKDiving(value) {
-        return Math.min(99, Math.round(((player.Agi*0.6) + (player.Bra*0.2) + (player.Ref*0.2))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setGKHandling(value) {
-        return Math.min(99, Math.round(((player.Han*0.7) + (player.Thr*0.2) + (player.Str*0.1))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setGKKicking(value) {
-        return Math.min(99, Math.round(((player.Kic*0.7) + (player.Pas*0.2) + (player.Vis*0.1))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setGKPositioning(value) {
-        return Math.min(99, Math.round(((player.Pos*0.5) + (player.Cmd*0.3) + (player.Dec*0.2))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setGKReflexes(value) {
-        return Math.min(99, Math.round(((player.Ref*0.8) + (player.Agi*0.1) + (player.Pos*0.1))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
 </script>
 
 <div class="flex flex-col gap-[5px]">
@@ -36,8 +16,8 @@
         Goalkeeper
     </div>
     <div class="col-span-1 flex flex-row items-center">
-        <div class=" text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setGKDiving())};">
-            {setGKDiving()}
+        <div class=" text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.GKDiving)};">
+            {player.GKDiving}
         </div>
         <div class="text-center">
             GK Diving
@@ -45,8 +25,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setGKHandling())};">
-            {setGKHandling()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.GKHandling)};">
+            {player.GKHandling}
         </div>
         <div class="text-center">
             GK Handling
@@ -54,8 +34,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setGKKicking())};">
-            {setGKKicking()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.GKKicking)};">
+            {player.GKKicking}
         </div>
         <div class="text-center">
             GK Kicking
@@ -63,8 +43,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setGKPositioning())};">
-            {setGKPositioning()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.GKPositioning)};">
+            {player.GKPositioning}
         </div>
         <div class="text-center">
             GK Positioning
@@ -72,8 +52,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setGKReflexes())};">
-            {setGKReflexes()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.GKReflexes)};">
+            {player.GKReflexes}
         </div>
         <div class="text-center">
             GK Reflexes
