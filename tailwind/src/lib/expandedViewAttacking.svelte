@@ -9,26 +9,6 @@
         if (value >= 80) return '#0C8539';
         return 'white';  // Default color
     }
-
-    function setCrossing() {
-        return Math.min(99, Math.round(((player.Cro*0.75) + (player.Cor*0.2) + (player.Fre*0.05))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setFinishing() {
-        return Math.min(99, Math.round(((player.Fin*0.53) + (player.OtB*0.26) + (player.Lon*0.13) + (player.Fla*0.08))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setHeadingAccuracy() {
-        return Math.min(99, Math.round(((player.Hea * 0.6) + (player.Jum * 0.2) + (player.Str * 0.2)) * 5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setShortPassing() {
-        return Math.min(99, Math.round(((player.Pas*0.5) + (player.Vis*0.20) + (player.Fir*0.05) + (player.Dec*0.20) + (player.Com*0.05))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setVolleys() {
-        return Math.min(99, Math.round(((player.Fin*0.42) + (player.Tec*0.25) + (player.Lon*0.22) + (player.Fla*0.11))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
 </script>
 
 <div class="flex flex-col gap-[5px]">
@@ -36,8 +16,8 @@
         Attacking
     </div>
     <div class="col-span-1 flex flex-row items-center">
-        <div class=" text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setCrossing())};">
-            {setCrossing()}
+        <div class=" text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.crossing)};">
+            {player.crossing}
         </div>
         <div class="text-center">
             Crossing
@@ -45,8 +25,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setFinishing())};">
-            {setFinishing()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.finishing)};">
+            {player.finishing}
         </div>
         <div class="text-center">
             Finishing
@@ -54,8 +34,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setHeadingAccuracy())};">
-            {setHeadingAccuracy()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.headingAccuracy)};">
+            {player.headingAccuracy}
         </div>
         <div class="text-center">
             Heading Accuracy
@@ -63,8 +43,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setShortPassing())};">
-            {setShortPassing()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.shortPassing)};">
+            {player.shortPassing}
         </div>
         <div class="text-center">
             Short Passing
@@ -72,8 +52,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setVolleys())};">
-            {setVolleys()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.volleys)};">
+            {player.volleys}
         </div>
         <div class="text-center">
             Volleys

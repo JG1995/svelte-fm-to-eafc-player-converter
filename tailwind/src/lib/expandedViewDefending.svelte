@@ -9,26 +9,15 @@
         if (value >= 80) return '#0C8539';
         return 'white';  // Default color
     }
-
-    function setDefensiveAwareness() {
-        return Math.min(99, Math.round(((player.Mar*0.4) + (player.Dec*0.3) + (player.Pos*0.3))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setStandingTackle() {
-        return Math.min(99, Math.round(((player.Tck*0.8) + (player.Pos*0.1) + (player.Ant*0.1))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setSlidingTackle() {
-        return Math.min(99, Math.round(((player.Tck*0.5) + (player.Agg*0.2) + (player.Bra*0.3))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
 </script>
+
 <div class="flex flex-col gap-[5px]">
     <div class="font-bold text-left">
         Defending
     </div>
     <div class="col-span-1 flex flex-row items-center">
-        <div class=" text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setDefensiveAwareness())};">
-            {setDefensiveAwareness()}
+        <div class=" text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.defensiveAwareness)};">
+            {player.defensiveAwareness}
         </div>
         <div class="text-center">
             Def. Awareness
@@ -36,8 +25,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setStandingTackle())};">
-            {setStandingTackle()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.standingTackle)};">
+            {player.standingTackle}
         </div>
         <div class="text-center">
             Standing Tackle
@@ -45,8 +34,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setSlidingTackle())};">
-            {setSlidingTackle()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.slidingTackle)};">
+            {player.slidingTackle}
         </div>
         <div class="text-center">
             Sliding Tackle

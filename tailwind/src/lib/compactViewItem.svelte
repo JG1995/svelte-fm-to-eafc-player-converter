@@ -9,7 +9,7 @@
         if (value >= 80) return '#0C8539';
         return 'white';  // Default color
     }
-    function setFirstName() {
+/*    function setFirstName() {
         const parts = player.Name.split(' ');
         if (parts.length === 1) {
             return '';
@@ -108,7 +108,7 @@
 
     function setSkillMoves() {
         return Math.ceil(player.Fla / 4)
-    }
+    }*/
 
 </script>
 
@@ -116,7 +116,7 @@
 gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
     <div class="col-span-4 flex flex-col items-center justify-center">
         <!-- Place for name that spans divs 1, 2, 3, and 4 -->
-        {setFirstName()} <br/> <b>{setLastName()}</b>
+        {player.firstName} <br/> <b>{player.lastName}</b>
     </div>
 
     <!-- div 5 -->
@@ -135,22 +135,22 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
         <!-- Place for 4 lines of text in div-6 -->
         <div class="flex justify-between w-full">
             <span>Height:</span>
-            <span>{player.Height}</span>
+            <span>{player.height}</span>
         </div>
 
         <div class="flex justify-between w-full">
             <span>Weight:</span>
-            <span>{player.Weight}</span>
+            <span>{player.weight}</span>
         </div>
 
         <div class="flex justify-between w-full">
             <span>Weak Foot:</span>
-            <span>{setWeakFoot(player["Left Foot"], player["Right Foot"])}</span>
+            <span>{player.weakFoot}</span>
         </div>
 
         <div class="flex justify-between w-full">
             <span>Skills:</span>
-            <span>{setSkillMoves()}</span>
+            <span>{player.skillMoves}</span>
         </div>
     </div>
 
@@ -161,8 +161,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Pace
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(setAvgPace())};">
-            {setAvgPace()}
+             style="background-color: {getBackgroundColor(99)};">
+            99
         </div>
     </div>
 

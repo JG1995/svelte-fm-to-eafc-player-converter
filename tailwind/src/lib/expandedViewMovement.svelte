@@ -9,26 +9,6 @@
         if (value >= 80) return '#0C8539';
         return 'white';  // Default color
     }
-
-    function setAcceleration() {
-        return Math.min(99, Math.round(((player.Acc*0.75) + (player.Agi*0.25))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setSprintSpeed() {
-        return Math.min(99, Math.round(((player.Pac*0.80) + (player.Bal*0.2))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setAgility() {
-        return Math.min(99, Math.round(((player.Agi*0.80) + (player.Bal*0.2))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setReactions() {
-        return Math.min(99, Math.round(((player.Ant*0.4) + (player.Det*0.2) + (player.OtB*0.1) + (player.Pos*0.1) + (player.Com*0.2))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
-
-    function setBalance() {
-        return Math.min(99, Math.round(((player.Bal*0.8) + (player.Agi*0.2) + (player.Tec*0.1))*5.5) + Math.floor(Math.random() * 3) - 1);
-    }
 </script>
 
 <div class="flex flex-col gap-[5px]">
@@ -36,8 +16,8 @@
         Movement
     </div>
     <div class="col-span-1 flex flex-row items-center">
-        <div class=" text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setAcceleration())};">
-            {setAcceleration()}
+        <div class=" text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.acceleration)};">
+            {player.acceleration}
         </div>
         <div class="text-center">
             Acceleration
@@ -45,8 +25,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setSprintSpeed())};">
-            {setSprintSpeed()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.sprintSpeed)};">
+            {player.sprintSpeed}
         </div>
         <div class="text-center">
             Sprint Speed
@@ -54,8 +34,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setAgility())};">
-            {setAgility()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.agility)};">
+            {player.agility}
         </div>
         <div class="text-center">
             Agility
@@ -63,8 +43,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setReactions())};">
-            {setReactions()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.reactions)};">
+            {player.reactions}
         </div>
         <div class="text-center">
             Reactions
@@ -72,8 +52,8 @@
     </div>
 
     <div class="col-span-1 flex flex-row items-center">
-        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setBalance())};">
-            {setBalance()}
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(player.balance)};">
+            {player.balance}
         </div>
         <div class="text-center">
             Balance
