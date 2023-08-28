@@ -10,8 +10,11 @@
         return 'white';  // Default color
     }
 
-    function setOverall(value) {
+    function setOverall() {
+        const functions = [setCBRating, setLBRBRating, setLWBRWBRating, setCDMRating, setCMRating,
+            setLMRMRating, setCAMRating, setLWRWRating, setLFCFRFRating, setSTRating]
 
+        return Math.max(...functions.map(func => func()));
     }
 
     function setAvgPace() {
@@ -42,6 +45,82 @@
         return Math.min(99, Math.round((player.strength*0.5) + (player.stamina*0.25) + (player.aggression*0.2)
             + (player.jumping*0.05)));
     }
+
+    function setCBRating() {
+        return Math.min(99, Math.round((player.defensiveAwareness*0.15) + (player.standingTackle*0.15) +
+            (player.slidingTackle*0.15) + (player.headingAccuracy*0.1) + (player.strength*0.1) +
+            (player.aggression*0.08) + (player.interceptions*0.08) + (player.shortPassing*0.05) +
+            (player.ballControl*0.05) + (player.reactions*0.05) + (player.jumping*0.04)))
+    }
+
+    function setLBRBRating() {
+        return Math.min(99, Math.round((player.slidingTackle*0.13) + (player.standingTackle*0.12) +
+            (player.interceptions*0.12) + (player.defensiveAwareness*0.1) + (player.stamina*0.08) +
+            (player.reactions*0.08) + (player.crossing*0.07) + (player.headingAccuracy*0.07) +
+            (player.ballControl*0.07) + (player.shortPassing*0.06) + (player.sprintSpeed*0.05) +
+            (player.aggression*0.05)))
+    }
+
+    function setLWBRWBRating() {
+        return Math.min(99, Math.round((player.standingTackle*0.11) + (player.slidingTackle*0.1) +
+            (player.crossing*0.1) + (player.shortPassing*0.1) + (player.ballControl*0.1) +
+            (player.interceptions*0.1) + (player.defensiveAwareness*0.09) + (player.stamina*0.08) +
+            (player.reactions*0.08) + (player.dribbling*0.07) + (player.sprintSpeed*0.04) +
+            (player.agility*0.03)))
+    }
+
+    function setCDMRating() {
+        return Math.min(99, Math.round((player.shortPassing*0.13) + (player.interceptions*0.13) +
+            (player.longPassing*0.11) + (player.defensiveAwareness*0.1) + (player.standingTackle*0.1) +
+            (player.ballControl*0.09) + (player.reactions*0.09) + (player.vision*0.08) +
+            (player.stamina*0.06) + (player.strength*0.06) + (player.aggression*0.05)))
+    }
+
+    function setCMRating() {
+        return Math.min(99, Math.round((player.shortPassing*0.15) + (player.longPassing*0.13) +
+            (player.vision*0.12) + (player.ballControl*0.1) + (player.dribbling*0.09) +
+            (player.reactions*0.08) + (player.interceptions*0.08) + (player.positioning*0.08) +
+            (player.standingTackle*0.06) + (player.stamina*0.06) + (player.longShots*0.05)))
+    }
+
+    function setLMRMRating() {
+        return Math.min(99, Math.round((player.crossing*0.14) + (player.dribbling*0.14) +
+            (player.shortPassing*0.12) + (player.ballControl*0.12) + (player.longPassing*0.08) +
+            (player.vision*0.08) + (player.reactions*0.07) + (player.positioning*0.07) +
+            (player.stamina*0.05) + (player.acceleration*0.05) + (player.sprintSpeed*0.05) +
+            (player.agility*0.03)))
+    }
+
+    function setCAMRating() {
+        return Math.min(99, Math.round((player.shortPassing*0.16) + (player.vision*0.16) +
+            (player.ballControl*0.13) + (player.positioning*0.12) + (player.dribbling*0.11) +
+            (player.reactions*0.08) + (player.longShots*0.06) + (player.finishing*0.05) +
+            (player.shotPower*0.05) + (player.acceleration*0.04) + (player.agility*0.04)))
+    }
+
+    function setLWRWRating() {
+        return Math.min(99, Math.round((player.crossing*0.16) + (player.dribbling*0.16) +
+            (player.ballControl*0.13) + (player.shortPassing*0.1) + (player.positioning*0.09) +
+            (player.acceleration*0.06) + (player.sprintSpeed*0.06) + (player.reactions*0.06) +
+            (player.agility*0.05) + (player.vision*0.05) + (player.finishing*0.04) +
+            (player.longShots*0.04)))
+    }
+
+    function setLFCFRFRating() {
+        return Math.min(99, Math.round((player.finishing*0.12) + (player.positioning*0.12) +
+            (player.dribbling*0.11) + (player.ballControl*0.11) + (player.shotPower*0.1) +
+            (player.longShots*0.1) + (player.reactions*0.1) + (player.shortPassing*0.06) +
+            (player.headingAccuracy*0.05) + (player.vision*0.05) + (player.acceleration*0.04) +
+            (player.sprintSpeed*0.04)))
+    }
+
+    function setSTRating() {
+        return Math.min(99, Math.round((player.finishing*0.2) + (player.positioning*0.12) +
+            (player.headingAccuracy*0.1) + (player.shotPower*0.1) + (player.reactions*0.1) +
+            (player.dribbling*0.08) + (player.ballControl*0.08) + (player.volleys*0.05) +
+            (player.longShots*0.05) + (player.acceleration*0.05) + (player.sprintSpeed*0.04) +
+            (player.strength*0.03)))
+    }
 </script>
 
 <div class="h-[80px] w-[994px] bg-[#6B728E] grid grid-cols-[70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px]
@@ -57,8 +136,8 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             Overall
         </div>
         <div class="text-center py-1 px-2 rounded"
-             style="background-color: {getBackgroundColor(85)};">
-            85
+             style="background-color: {getBackgroundColor(setOverall())};">
+            {setOverall()}
         </div>
     </div>
 

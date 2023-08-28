@@ -157,7 +157,10 @@
 
         GKReflexes: Math.min(99, Math.round(((player.Ref*0.8) + (player.Agi*0.1) + (player.Pos*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        CBRating: 0,
+        CBRating: Math.min(99, Math.round((player.defensiveAwareness*0.15) + (player.standingTackle*0.15) +
+                        (player.slidingTackle*0.15) + (player.headingAccuracy*0.1) + (player.strength*0.1) +
+                        (player.aggression*0.08) + (player.interceptions*0.08) + (player.shortPassing*0.05) +
+                        (player.ballControl*0.05) + (player.reactions*0.05) + (player.jumping*0.04))),
 
         RBLBRating: 0,
 
@@ -179,6 +182,8 @@
       }
     });
 
+
+    console.log(EAFCPlayers);
     return EAFCPlayers;
   }
 
