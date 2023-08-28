@@ -168,13 +168,13 @@
 
         GKDiving: Math.min(99, Math.round(((player.Ref*0.6) + (player.Bra*0.2) + (player.Agi*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        GKHandling: Math.min(99, Math.round(((player.Han*0.7) + (player.Thr*0.2) + (player.Str*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
+        GKHandling: Math.min(99, Math.round(((player.Han*0.6) + (player.Thr*0.2) + (player.Aer*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
         GKKicking: Math.min(99, Math.round(((player.Kic*0.7) + (player.Pas*0.2) + (player.Vis*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        GKPositioning: Math.min(99, Math.round(((player.Pos*0.5) + (player.Cmd*0.3) + (player.Dec*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
+        GKPositioning: Math.min(99, Math.round(((player.Pos*0.3) + (player.Com*0.2) + (player.Cmd*0.3) + (player.Dec*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        GKReflexes: Math.min(99, Math.round(((player.Ref*0.8) + (player.Agi*0.1) + (player.Pos*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
+        GKReflexes: Math.min(99, Math.round(((player.Ref*0.9) + (player.Agi*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
       }
     });
 
