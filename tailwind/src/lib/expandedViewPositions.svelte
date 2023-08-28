@@ -14,7 +14,7 @@
         return Math.min(99, Math.round((player.defensiveAwareness*0.15) + (player.standingTackle*0.15) +
             (player.slidingTackle*0.15) + (player.headingAccuracy*0.1) + (player.strength*0.1) +
             (player.aggression*0.08) + (player.interceptions*0.08) + (player.shortPassing*0.05) +
-            (player.ballControl*0.05) + (player.reactions*0.05) + (player.jumping*0.04)))
+            (player.ballControl*0.05) + (player.reactions*0.05) + (player.jumping*0.04) + (player.internationalReputation)))
     }
 
     function setLBRBRating() {
@@ -22,7 +22,7 @@
             (player.interceptions*0.12) + (player.defensiveAwareness*0.1) + (player.stamina*0.08) +
             (player.reactions*0.08) + (player.crossing*0.07) + (player.headingAccuracy*0.07) +
             (player.ballControl*0.07) + (player.shortPassing*0.06) + (player.sprintSpeed*0.05) +
-            (player.aggression*0.05)))
+            (player.aggression*0.05) + (player.internationalReputation)))
     }
 
     function setLWBRWBRating() {
@@ -30,21 +30,21 @@
             (player.crossing*0.1) + (player.shortPassing*0.1) + (player.ballControl*0.1) +
             (player.interceptions*0.1) + (player.defensiveAwareness*0.09) + (player.stamina*0.08) +
             (player.reactions*0.08) + (player.dribbling*0.07) + (player.sprintSpeed*0.04) +
-            (player.agility*0.03)))
+            (player.agility*0.03) + (player.internationalReputation)))
     }
 
     function setCDMRating() {
         return Math.min(99, Math.round((player.shortPassing*0.13) + (player.interceptions*0.13) +
             (player.longPassing*0.11) + (player.defensiveAwareness*0.1) + (player.standingTackle*0.1) +
             (player.ballControl*0.09) + (player.reactions*0.09) + (player.vision*0.08) +
-            (player.stamina*0.06) + (player.strength*0.06) + (player.aggression*0.05)))
+            (player.stamina*0.06) + (player.strength*0.06) + (player.aggression*0.05) + (player.internationalReputation)))
     }
 
     function setCMRating() {
         return Math.min(99, Math.round((player.shortPassing*0.15) + (player.longPassing*0.13) +
             (player.vision*0.12) + (player.ballControl*0.1) + (player.dribbling*0.09) +
             (player.reactions*0.08) + (player.interceptions*0.08) + (player.positioning*0.08) +
-            (player.standingTackle*0.06) + (player.stamina*0.06) + (player.longShots*0.05)))
+            (player.standingTackle*0.06) + (player.stamina*0.06) + (player.longShots*0.05) + (player.internationalReputation)))
     }
 
     function setLMRMRating() {
@@ -52,14 +52,14 @@
             (player.shortPassing*0.12) + (player.ballControl*0.12) + (player.longPassing*0.08) +
             (player.vision*0.08) + (player.reactions*0.07) + (player.positioning*0.07) +
             (player.stamina*0.05) + (player.acceleration*0.05) + (player.sprintSpeed*0.05) +
-            (player.agility*0.03)))
+            (player.agility*0.03) + (player.internationalReputation)))
     }
 
     function setCAMRating() {
         return Math.min(99, Math.round((player.shortPassing*0.16) + (player.vision*0.16) +
             (player.ballControl*0.13) + (player.positioning*0.12) + (player.dribbling*0.11) +
             (player.reactions*0.08) + (player.longShots*0.06) + (player.finishing*0.05) +
-            (player.shotPower*0.05) + (player.acceleration*0.04) + (player.agility*0.04)))
+            (player.shotPower*0.05) + (player.acceleration*0.04) + (player.agility*0.04) + (player.internationalReputation)))
     }
 
     function setLWRWRating() {
@@ -67,7 +67,7 @@
             (player.ballControl*0.13) + (player.shortPassing*0.1) + (player.positioning*0.09) +
             (player.acceleration*0.06) + (player.sprintSpeed*0.06) + (player.reactions*0.06) +
             (player.agility*0.05) + (player.vision*0.05) + (player.finishing*0.04) +
-            (player.longShots*0.04)))
+            (player.longShots*0.04) + (player.internationalReputation)))
     }
 
     function setLFCFRFRating() {
@@ -75,7 +75,7 @@
             (player.dribbling*0.11) + (player.ballControl*0.11) + (player.shotPower*0.1) +
             (player.longShots*0.1) + (player.reactions*0.1) + (player.shortPassing*0.06) +
             (player.headingAccuracy*0.05) + (player.vision*0.05) + (player.acceleration*0.04) +
-            (player.sprintSpeed*0.04)))
+            (player.sprintSpeed*0.04) + (player.internationalReputation)))
     }
 
     function setSTRating() {
@@ -83,7 +83,7 @@
             (player.headingAccuracy*0.1) + (player.shotPower*0.1) + (player.reactions*0.1) +
             (player.dribbling*0.08) + (player.ballControl*0.08) + (player.volleys*0.05) +
             (player.longShots*0.05) + (player.acceleration*0.05) + (player.sprintSpeed*0.04) +
-            (player.strength*0.03)))
+            (player.strength*0.03) + (player.internationalReputation)))
     }
 </script>
 

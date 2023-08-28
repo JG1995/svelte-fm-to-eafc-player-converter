@@ -89,6 +89,24 @@
 
         skillMoves: Math.ceil(player.Fla / 4),
 
+        internationalReputation: (() => {
+          let reputation = player.WR
+          // Remove anything non-numeric using a regular expression
+          const cleanedInput = parseInt(reputation.replace(/[^0-9]/g, ''), 10);
+
+          if (cleanedInput >= 9000) {
+            return 5;
+          } else if (cleanedInput >= 8000 && cleanedInput < 9000) {
+            return 4;
+          } else if (cleanedInput >= 7000 && cleanedInput < 8000) {
+            return 3;
+          } else if (cleanedInput >= 6000 && cleanedInput < 7000) {
+            return 2;
+          } else {
+            return 1;
+          }
+        })(),
+
         crossing: Math.min(99, Math.round(((player.Cro*0.75) + (player.Cor*0.2) + (player.Fre*0.05))*5.5) + Math.floor(Math.random() * 3) - 1),
 
         finishing: Math.min(99, Math.round(((player.Fin*0.53) + (player.OtB*0.26) + (player.Lon*0.13) + (player.Fla*0.08))*5.5) + Math.floor(Math.random() * 3) - 1),
@@ -156,29 +174,6 @@
         GKPositioning: Math.min(99, Math.round(((player.Pos*0.5) + (player.Cmd*0.3) + (player.Dec*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
         GKReflexes: Math.min(99, Math.round(((player.Ref*0.8) + (player.Agi*0.1) + (player.Pos*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
-
-        CBRating: Math.min(99, Math.round((player.defensiveAwareness*0.15) + (player.standingTackle*0.15) +
-                        (player.slidingTackle*0.15) + (player.headingAccuracy*0.1) + (player.strength*0.1) +
-                        (player.aggression*0.08) + (player.interceptions*0.08) + (player.shortPassing*0.05) +
-                        (player.ballControl*0.05) + (player.reactions*0.05) + (player.jumping*0.04))),
-
-        RBLBRating: 0,
-
-        RWBLWBRating: 0,
-
-        CDMRating: 0,
-
-        CMRating: 0,
-
-        CAMRating: 0,
-
-        RMLMRating: 0,
-
-        RWLWRating: 0,
-
-        RFLFCFRating: 0,
-
-        STRating: 0
       }
     });
 
@@ -236,13 +231,13 @@
     }
   }
 
-  let textData = '| Rec     | Inf | Name             | Cor | Cro | Dri | Fin | Fir | Fre | Hea | Lon | L Th | Mar | Pas | Pen | Tck | Tec | Agg | Ant | Bra | Cmp | Cnt | Dec | Det | Fla | Ldr | OtB | Pos | Tea | Vis | Wor | Acc | Agi | Bal | Jum | Nat | Pac | Sta | Str | Aer | Cmd | Com | Ecc | Han | Kic | 1v1 | Pun | Ref | TRO | Thr | DoB                       | Height | Weight | Right Foot    | Left Foot     | \n' +
+  let textData = '| Rec     | Inf | Name             | Cor | Cro | Dri | Fin | Fir | Fre | Hea | Lon | L Th | Mar | Pas | Pen | Tck | Tec | Agg | Ant | Bra | Cmp | Cnt | Dec | Det | Fla | Ldr | OtB | Pos | Tea | Vis | Wor | Acc | Agi | Bal | Jum | Nat | Pac | Sta | Str | Aer | Cmd | Com | Ecc | Han | Kic | 1v1 | Pun | Ref | TRO | Thr | DoB                       | Height | Weight | Right Foot    | Left Foot     | WR | \n' +
           '| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| \n' +
-          '| - -  -  |     | Lionel Messi     | 15  | 15  | 20  | 17  | 19  | 18  | 10  | 16  | 4    | 4   | 19  | 17  | 7   | 20  | 7   | 16  | 10  | 16  | 13  | 18  | 20  | 20  | 14  | 14  | 5   | 14  | 20  | 9   | 16  | 15  | 18  | 6   | 14  | 15  | 13  | 9   | 2   | 2   | 3   | 1   | 1   | 3   | 1   | 2   | 3   | 1   | 1   | 24/6/1987 (35 years old)  | 169 cm | 67 kg  | Fairly Strong | Very Strong   | \n' +
+          '| - -  -  |     | Lionel Messi     | 15  | 15  | 20  | 17  | 19  | 18  | 10  | 16  | 4    | 4   | 19  | 17  | 7   | 20  | 7   | 16  | 10  | 16  | 13  | 18  | 20  | 20  | 14  | 14  | 5   | 14  | 20  | 9   | 16  | 15  | 18  | 6   | 14  | 15  | 13  | 9   | 2   | 2   | 3   | 1   | 1   | 3   | 1   | 2   | 3   | 1   | 1   | 24/6/1987 (35 years old)  | 169 cm | 67 kg  | Fairly Strong | Very Strong   | 10,000 | \n' +
           '| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| \n' +
-          '| - -  -  |     | Mohamed Salah    | 11  | 14  | 16  | 16  | 17  | 12  | 10  | 13  | 6    | 7   | 15  | 17  | 7   | 17  | 11  | 15  | 10  | 15  | 15  | 15  | 18  | 15  | 11  | 17  | 9   | 16  | 17  | 15  | 18  | 16  | 17  | 8   | 17  | 17  | 15  | 15  | 2   | 3   | 3   | 2   | 3   | 2   | 2   | 1   | 3   | 1   | 4   | 15/6/1992 (30 years old)  | 175 cm | 72 kg  | Weak          | Very Strong   | \n' +
+          '| - -  -  |     | Mohamed Salah    | 11  | 14  | 16  | 16  | 17  | 12  | 10  | 13  | 6    | 7   | 15  | 17  | 7   | 17  | 11  | 15  | 10  | 15  | 15  | 15  | 18  | 15  | 11  | 17  | 9   | 16  | 17  | 15  | 18  | 16  | 17  | 8   | 17  | 17  | 15  | 15  | 2   | 3   | 3   | 2   | 3   | 2   | 2   | 1   | 3   | 1   | 4   | 15/6/1992 (30 years old)  | 175 cm | 72 kg  | Weak          | Very Strong   | 8,750 | \n' +
           '| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| \n' +
-          '| - -  -  |     | Antony           | 12  | 14  | 16  | 12  | 16  | 12  | 8   | 14  | 6    | 6   | 14  | 11  | 6   | 16  | 12  | 13  | 15  | 14  | 12  | 11  | 14  | 17  | 8   | 14  | 10  | 12  | 13  | 15  | 15  | 16  | 13  | 7   | 15  | 15  | 14  | 11  | 3   | 3   | 3   | 1   | 3   | 2   | 1   | 2   | 4   | 1   | 3   | 24/2/2000 (22 years old)  | 173 cm | 63 kg  | Weak          | Very Strong   |'
+          '| - -  -  |     | Antony           | 12  | 14  | 16  | 12  | 16  | 12  | 8   | 14  | 6    | 6   | 14  | 11  | 6   | 16  | 12  | 13  | 15  | 14  | 12  | 11  | 14  | 17  | 8   | 14  | 10  | 12  | 13  | 15  | 15  | 16  | 13  | 7   | 15  | 15  | 14  | 11  | 3   | 3   | 3   | 1   | 3   | 2   | 1   | 2   | 4   | 1   | 3   | 24/2/2000 (22 years old)  | 173 cm | 63 kg  | Weak          | Very Strong   | 5,500 |'
   ; // or get it from a file input
 
   let players = convertPlayers(createFMPlayerObjects(textData));
