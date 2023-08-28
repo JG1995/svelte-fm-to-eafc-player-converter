@@ -10,6 +10,13 @@
         return 'white';  // Default color
     }
 
+    function setGKRating() {
+        return Math.min(99, Math.round((player.GKReflexes*0.15) + (player.GKDiving*0.15) +
+            (player.GKPositioning*0.15) + (player.GKHandling*0.1) + (player.GKKicking*0.1) +
+            (player.agility*0.08) + (player.reactions*0.08) + (player.composure*0.05) +
+            (player.shortPassing*0.05) + (player.longPassing*0.05) + (player.vision*0.04) + (player.internationalReputation)))
+    }
+
     function setCBRating() {
         return Math.min(99, Math.round((player.defensiveAwareness*0.15) + (player.standingTackle*0.15) +
             (player.slidingTackle*0.15) + (player.headingAccuracy*0.1) + (player.strength*0.1) +
@@ -177,6 +184,15 @@
         </div>
         <div class="text-center">
             CB
+        </div>
+    </div>
+
+    <div class="col-span-1 flex flex-row items-center">
+        <div class="text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setGKRating())};">
+            {setGKRating()}
+        </div>
+        <div class="text-center">
+            GK
         </div>
     </div>
 </div>

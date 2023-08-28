@@ -11,7 +11,7 @@
     }
 
     function setOverall() {
-        const functions = [setCBRating, setLBRBRating, setLWBRWBRating, setCDMRating, setCMRating,
+        const functions = [setGKRating, setCBRating, setLBRBRating, setLWBRWBRating, setCDMRating, setCMRating,
             setLMRMRating, setCAMRating, setLWRWRating, setLFCFRFRating, setSTRating]
 
         return Math.max(...functions.map(func => func()));
@@ -44,6 +44,13 @@
     function setAvgPhysical() {
         return Math.min(99, Math.round((player.strength*0.5) + (player.stamina*0.25) + (player.aggression*0.2)
             + (player.jumping*0.05)));
+    }
+
+    function setGKRating() {
+        return Math.min(99, Math.round((player.GKReflexes*0.15) + (player.GKDiving*0.15) +
+            (player.GKPositioning*0.15) + (player.GKHandling*0.1) + (player.GKKicking*0.1) +
+            (player.agility*0.08) + (player.reactions*0.08) + (player.composure*0.05) +
+            (player.shortPassing*0.05) + (player.longPassing*0.05) + (player.vision*0.04) + (player.internationalReputation)))
     }
 
     function setCBRating() {
