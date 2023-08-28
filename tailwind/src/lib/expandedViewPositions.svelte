@@ -88,6 +88,9 @@
 </script>
 
 <div class="h-auto flex flex-col gap-[5px] col-start-5 row-span-full">
+    <div class="font-bold text-left">
+        Positions
+    </div>
     <div class="col-span-1 flex flex-row items-center">
         <div class=" text-center py-0.5 px-2 rounded mr-2" style="background-color: {getBackgroundColor(setSTRating())};">
             {setSTRating()}

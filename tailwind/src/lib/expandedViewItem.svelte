@@ -11,15 +11,23 @@
     export let player;
 </script>
 
-<div class="h-auto w-[994px] bg-[#50577A] grid grid-cols-[187px,187px,187px,187px,187px]
-gap-[14px] text-white font-pt-sans mb-[15px] items-start rounded p-[12px]">
-    <Attacking player={player}/>
-    <Skill player={player}/>
-    <Movement player={player}/>
-    <Power player={player}/>
+<div class="h-auto w-[994px] bg-[#50577A] grid grid-cols-[187px,187px,187px,187px,187px] gap-[14px] text-white font-pt-sans mb-[15px] items-start rounded p-[12px]">
+
+    <div class="col-span-4 grid grid-cols-[187px,187px,187px,187px] gap-[14px]">
+        <Attacking player={player}/>
+        <Skill player={player}/>
+        <Movement player={player}/>
+        <Power player={player}/>
+        <Mentality player={player}/>
+        <Defending player={player}/>
+        <Goalkeeping player={player}/>
+        <Other player={player}/>
+    </div>
+
     <Positions player={player}/>
-    <Mentality player={player}/>
-    <Defending player={player}/>
-    <Goalkeeping player={player}/>
-    <Other player={player}/>
+
 </div>
+
+
+
+
