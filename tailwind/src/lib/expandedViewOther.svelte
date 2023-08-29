@@ -29,11 +29,17 @@
 
     <div class="flex justify-between w-full">
         <span>Weak Foot:</span>
-        <span>{player.weakFoot}</span>
+        <div class="flex items-center">
+            <span>{player.weakFoot}</span>
+            <img src="/public/star.png" alt="star" class="ml-2 h-3 w-3" /> <!-- Adjust the height and width as needed -->
+        </div>
     </div>
 
     <div class="flex justify-between w-full">
         <span>Skills:</span>
-        <span>{player.skillMoves}</span>
+        <div class="flex items-center">
+            <span>{player.skillMoves}</span>
+            <img src="/public/star.png" alt="star" class="ml-2 h-3 w-3" /> <!-- Adjust the height and width as needed -->
+        </div>
     </div>
 </div>

@@ -46,10 +46,14 @@
         <div class="w-3/4 text-center flex flex-col justify-center items-center">
             <h1 class="text-nunito font-black text-5xl mb-4">FM to EAFC Player Converter</h1>
 
-            <ul class="list-decimal list-inside w-1/3 mb-6 font-pt-sans">
-                <li class="mb-2">Placeholder Text 1</li>
-                <li class="mb-2">Placeholder Text 2</li>
-                <li class="mb-2">Placeholder Text 3</li>
+            <ul class="list-decimal list-inside w-2/3 mb-6 font-pt-sans text-xs">
+                <li class="mb-2"><a href="https://www.mediafire.com/file/q47rtsnam2u3yql/FMtoEAFCPlayerConverterViews.zip/file">Download and extract this .ZIP file containing the FM Views you will need. Place them in "\Documents\Sports Interactive\Football Manager 2023\views".</a></li>
+                    <li class="mb-2"><strong>If exporting a Squad:</strong> Go to your squad-panel, click "View -> Custom -> Import View", and select "Stat Conversion View - Squad - No IGE" from the list.</li>
+                    <li class="mb-2"><strong>If exporting a Shortlist:</strong> Go to your shortlist-panel, click "View -> Custom -> Import View", and select "Stat Conversion View - Shortlist - No IGE" from the list.</li>
+                <li class="mb-2">Select the newly imported view from the drop-down menu.</li>
+                <li class="mb-2">Select all the players you want to export - Or CTRL+A for all of them!</li>
+                <li class="mb-2">Press CTRL+P, and select "Text File". Save it some place you'll remember.</li>
+                <li class="mb-2">Click the "Upload" button below, and find the file you saved! The website will handle the rest!</li>
             </ul>
 
             <input type="file" bind:files accept=".rtf" id="fileInput" on:change={handleChange} />
