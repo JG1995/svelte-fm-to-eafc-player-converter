@@ -90,7 +90,11 @@
 
         skillMoves: Math.ceil(player.Fla / 4),
 
-        internationalReputation: (() => {
+        internationalReputation: 3,
+
+        /* Implement system to manage Reputation eventually. For now, value is 3.
+
+        (() => {
           let reputation = player.WR
           // Remove anything non-numeric using a regular expression
           const cleanedInput = parseInt(reputation.replace(/[^0-9]/g, ''), 10);
@@ -106,7 +110,7 @@
           } else {
             return 1;
           }
-        })(),
+        })()*/
 
         crossing: Math.min(99, Math.round(((player.Cro*0.75) + (player.Cor*0.2) + (player.Fre*0.05))*5.5) + Math.floor(Math.random() * 3) - 1),
 
