@@ -112,73 +112,73 @@
           }
         })()*/
 
-        crossing: Math.min(99, Math.round(((player.Cro*0.75) + (player.Cor*0.2) + (player.Fre*0.05))*5.5) + Math.floor(Math.random() * 3) - 1),
+        crossing: Math.min(94, Math.round(((player.Cro*0.7) + (player.Tec*0.2) + (player.Cor*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        finishing: Math.min(99, Math.round(((player.Fin*0.53) + (player.OtB*0.26) + (player.Lon*0.13) + (player.Fla*0.08))*5.5) + Math.floor(Math.random() * 3) - 1),
+        finishing: Math.min(95, Math.round(((player.Fin*0.4) + (player.Cmp*0.3) + (player.Dec*0.2) + (player.Cnt*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        headingAccuracy: Math.min(99, Math.round(((player.Hea * 0.6) + (player.Jum * 0.2) + (player.Str * 0.2)) * 5.5) + Math.floor(Math.random() * 3) - 1),
+        headingAccuracy: Math.min(93, Math.round(((player.Hea * 0.8) + (player.Jum * 0.1) + (player.Str * 0.1)) * 5.5) + Math.floor(Math.random() * 3) - 1),
 
-        shortPassing: Math.min(99, Math.round(((player.Pas*0.5) + (player.Vis*0.20) + (player.Fir*0.05) + (player.Dec*0.20) + (player.Com*0.05))*5.5) + Math.floor(Math.random() * 3) - 1),
+        shortPassing: Math.min(93, Math.round(((player.Pas*0.6) + (player.Tec*0.2) + (player.Dec*0.1) + (player.Tea*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        volleys: Math.min(99, Math.round(((player.Fin*0.42) + (player.Tec*0.25) + (player.Lon*0.22) + (player.Fla*0.11))*5.5) + Math.floor(Math.random() * 3) - 1),
+        volleys: Math.min(90, Math.round(((player.Tec*0.4) + (player.Fin*0.3) + (player.Cmp*0.2) + (player.Fla*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        dribbling: Math.min(99, Math.round(((player.Dri*0.75) + (player.Fla*0.15) + (player.Tec*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
+        dribbling: Math.min(95, Math.round(((player.Dri*0.7) + (player.Tec*0.1) + (player.Agi*0.1) + (player.Fir*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        curve: Math.min(99, Math.round(((player.Cor*0.20) + (player.Fre*0.25) + (player.Tec*0.25) + (player.Cro*0.3))*5.5) + Math.floor(Math.random() * 3) - 1),
+        curve: Math.min(93, Math.round(((player.Cor*0.4) + (player.Fre*0.2) + (player.Tec*0.2) + (player.Cro*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        freeKickAccuracy: Math.min(99, Math.round(((player.Fre*0.7) + (player.Lon*0.2) + (player.Tec*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
+        freeKickAccuracy: Math.min(94, Math.round(((player.Fre*0.7) + (player.Lon*0.2) + (player.Tec*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        longPassing: Math.min(99, Math.round(((player.Pas*0.7) + (player.Vis*0.3))*5.5) + Math.floor(Math.random() * 3) - 1),
+        longPassing: Math.min(93, Math.round(((player.Pas*0.6) + (player.Vis*0.3) + (player.Tec*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        ballControl: Math.min(99, Math.round(((player.Fir*0.4) + (player.Tec*0.3) + (player.Dri*0.2) + (player.Fla*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
+        ballControl: Math.min(94, Math.round(((player.Fir*0.4) + (player.Dri*0.3) + (player.Tec*0.3))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        acceleration: Math.min(99, Math.round(((player.Acc*0.75) + (player.Agi*0.25))*5.5) + Math.floor(Math.random() * 3) - 1),
+        acceleration: Math.min(97, Math.round(((player.Acc*0.8) + (player.Agi*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        sprintSpeed: Math.min(99, Math.round(((player.Pac*0.80) + (player.Bal*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
+        sprintSpeed: Math.min(97, Math.round(((player.Pac*0.8) + (player.Bal*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        agility: Math.min(99, Math.round(((player.Agi*0.80) + (player.Bal*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
+        agility: Math.min(95, Math.round(((player.Agi*0.8) + (player.Bal*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        reactions: Math.min(99, Math.round(((player.Ant*0.4) + (player.Det*0.2) + (player.OtB*0.1) + (player.Pos*0.1) + (player.Com*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
+        reactions: Math.min(93, Math.round(((player.Ant*0.4) + (player.Det*0.2) + (player.OtB*0.1) + (player.Pos*0.1) + (player.Cmp*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        balance: Math.min(99, Math.round(((player.Bal*0.8) + (player.Agi*0.2) + (player.Tec*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
+        balance: Math.min(95, Math.round(((player.Bal*0.8) + (player.Agi*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        shotPower: Math.min(99, Math.round(((player.Str*0.5) + (player.Lon*0.3) + (player.Fin*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
+        shotPower: Math.min(94, Math.round(((player.Str*0.5) + (player.Lon*0.3) + (player.Fin*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        jumping: Math.min(99, Math.round(((player.Hea*0.6) + (player.Jum*0.4))*5.5) + Math.floor(Math.random() * 3) - 1),
+        jumping: Math.min(95, Math.round(((player.Jum*0.6) + (player.Str*0.4))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        stamina: Math.min(99, Math.round(((player.Sta*0.5) + (player.Wor*0.25) + (player.Nat*0.25))*5.5) + Math.floor(Math.random() * 3) - 1),
+        stamina: Math.min(95, Math.round(((player.Sta*0.5) + (player.Wor*0.25) + (player.Nat*0.25))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        strength: Math.min(99, Math.round(((player.Str*0.9) + (player.Jum*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
+        strength: Math.min(96, Math.round(((player.Str*0.9) + (player.Bal*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        longShots: Math.min(99, Math.round(((player.Lon*0.6) + (player.Fin*0.25) + (player.Tec*0.15))*5.5) + Math.floor(Math.random() * 3) - 1),
+        longShots: Math.min(91, Math.round(((player.Lon*0.7) + (player.Fin*0.2) + (player.Tec*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        aggression: Math.min(99, Math.round(((player.Agg*0.5) + (player.Bra*0.5))*5.5) + Math.floor(Math.random() * 3) - 1),
+        aggression: Math.min(95, Math.round(((player.Agg*0.6) + (player.Bra*0.4))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        interceptions: Math.min(99, Math.round(((player.Pos*0.4) + (player.Mar*0.3) + (player.Ant*0.3))*5.5) + Math.floor(Math.random() * 3) - 1),
+        interceptions: Math.min(94, Math.round(((player.Pos*0.4) + (player.Mar*0.3) + (player.Ant*0.3))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        positioning: Math.min(99, Math.round(((player.OtB*0.7) + (player.Ant*0.3))*5.5) + Math.floor(Math.random() * 3) - 1),
+        positioning: Math.min(95, Math.round(((player.OtB*0.6) + (player.Ant*0.3) + (player.Dec*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        vision: Math.min(99, Math.round(((player.Vis*0.6) + (player.Dec*0.3) + (player.Fla*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
+        vision: Math.min(94, Math.round(((player.Vis*0.7) + (player.Dec*0.3))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        penalties: Math.min(99, Math.round(((player.Pen*0.5) + (player.Fin*0.25) + (player.Com*0.25))*5.5) + Math.floor(Math.random() * 3) - 1),
+        penalties: Math.min(92, Math.round(((player.Pen*0.5) + (player.Fin*0.25) + (player.Cmp*0.25))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        composure: Math.min(99, Math.round(((player.Com*0.6) + (player.Dec*0.3) + (player.Ant*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
+        composure: Math.min(96, Math.round(((player.Cmp*0.6) + (player.Dec*0.3) + (player.Ant*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        defensiveAwareness: Math.min(99, Math.round(((player.Mar*0.4) + (player.Dec*0.3) + (player.Pos*0.3))*5.5) + Math.floor(Math.random() * 3) - 1),
+        defensiveAwareness: Math.min(90, Math.round(((player.Mar*0.4) + (player.Dec*0.3) + (player.Pos*0.3))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        standingTackle: Math.min(99, Math.round(((player.Tck*0.8) + (player.Pos*0.1) + (player.Ant*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
+        standingTackle: Math.min(92, Math.round(((player.Tck*0.8) + (player.Str*0.1) + (player.Ant*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        slidingTackle: Math.min(99, Math.round(((player.Tck*0.5) + (player.Agg*0.2) + (player.Bra*0.3))*5.5) + Math.floor(Math.random() * 3) - 1),
+        slidingTackle: Math.min(90, Math.round(((player.Tck*0.8) + (player.Agg*0.1) + (player.Bra*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        GKDiving: Math.min(99, Math.round(((player.Ref*0.6) + (player.Bra*0.2) + (player.Agi*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
+        GKDiving: Math.min(94, Math.round(((player.Ref*0.6) + (player.Bra*0.2) + (player.Agi*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        GKHandling: Math.min(99, Math.round(((player.Han*0.6) + (player.Thr*0.2) + (player.Aer*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
+        GKHandling: Math.min(93, Math.round(((player.Han*0.6) + (player.Thr*0.2) + (player.Aer*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        GKKicking: Math.min(99, Math.round(((player.Kic*0.7) + (player.Pas*0.2) + (player.Vis*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
+        GKKicking: Math.min(91, Math.round(((player.Kic*0.7) + (player.Pas*0.2) + (player.Vis*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        GKPositioning: Math.min(99, Math.round(((player.Pos*0.3) + (player.Com*0.2) + (player.Cmd*0.3) + (player.Dec*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
+        GKPositioning: Math.min(91, Math.round(((player.Pos*0.3) + (player.Com*0.2) + (player.Cmd*0.3) + (player.Dec*0.2))*5.5) + Math.floor(Math.random() * 3) - 1),
 
-        GKReflexes: Math.min(99, Math.round(((player.Ref*0.9) + (player.Agi*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
+        GKReflexes: Math.min(95, Math.round(((player.Ref*0.9) + (player.Agi*0.1))*5.5) + Math.floor(Math.random() * 3) - 1),
       }
     });
 
