@@ -107,7 +107,7 @@
 
         skillMoves: Math.ceil(player.Fla / 4),
 
-        internationalReputation: 1,
+        internationalReputation: 3,
 
         /* Implement system to manage Reputation eventually. For now, value is 3.
 
