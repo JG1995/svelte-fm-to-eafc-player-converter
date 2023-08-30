@@ -1,7 +1,7 @@
 <script>
     export let player;
-    let starImagePath = "tailwind/src/assets/star.png";
-    let altText = "skillmove/weakfoot star icon";
+    export let arrowState;
+    console.log("Arrow State in CompactViewItem: ", arrowState);
 
 
     function getBackgroundColor(value) {
@@ -135,7 +135,11 @@
 
 <div class="h-[80px] w-[994px] bg-[#6B728E] grid grid-cols-[70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px]
 gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
-    <div class="col-span-4 flex flex-col items-center justify-center">
+    <div class="col-span-1 flex flex-col items-center justify-center">
+        <img src={arrowState ? "/expand-arrow-white.png" : "/contract-arrow-white.png"} alt="expand" class="ml-2 h-5 w-5" />
+    </div>
+
+    <div class="col-span-3 flex flex-col items-center justify-center">
         <!-- Place for name that spans divs 1, 2, 3, and 4 -->
         {player.firstName} <br/> <b>{player.lastName}</b>
     </div>
