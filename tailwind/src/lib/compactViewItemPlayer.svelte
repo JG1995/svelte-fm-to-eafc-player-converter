@@ -123,7 +123,7 @@
     }
 </script>
 
-<div class="h-[80px] w-[994px] bg-[#6B728E] grid grid-cols-[70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px]
+<div class="h-[80px] w-[1014px] bg-[#6B728E] grid grid-cols-[70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px]
 gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
     <div class="col-span-1 flex flex-col items-center justify-center">
         <img src={arrowState ? "/expand-arrow-white.png" : "/contract-arrow-white.png"} alt="expand" class="ml-2 h-5 w-5" />

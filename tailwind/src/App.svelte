@@ -1,5 +1,6 @@
 <script>
-  import CompactViewItem from './lib/compactViewItem.svelte';
+  import CompactViewItemPlayer from './lib/compactViewItemPlayer.svelte';
+  import CompactViewItemGoalkeeper from './lib/compactViewItemGoalkeeper.svelte';
   import ExpandedViewItem from './lib/expandedViewItem.svelte';
   import FrontPage from "./lib/FrontPage.svelte";
 
@@ -262,16 +263,140 @@
       showDataItem = true;
     }
   }
+
+  function setOverall() {
+    const functions = [setGKRating, setCBRating, setLBRBRating, setLWBRWBRating, setCDMRating, setCMRating,
+      setLMRMRating, setCAMRating, setLWRWRating, setLFCFRFRating, setSTRating]
+
+    return Math.max(...functions.map(func => func()));
+  }
+
+  function getHighestRatingFunction(player) {
+    const ratings = {
+      'GK': setGKRating(player),
+      'CB': setCBRating(player),
+      'LBRB': setLBRBRating(player),
+      'LWBRWB': setLWBRWBRating(player),
+      'CDM': setCDMRating(player),
+      'CM': setCMRating(player),
+      'LMRM': setLMRMRating(player),
+      'CAM': setCAMRating(player),
+      'LWRW': setLWRWRating(player),
+      'LFCFRF': setLFCFRFRating(player),
+      'ST': setSTRating(player)
+    };
+
+    let maxRating = -Infinity;
+    let maxFunction = null;
+
+    for (const [position, rating] of Object.entries(ratings)) {
+      if (rating > maxRating) {
+        maxRating = rating;
+        maxFunction = position;
+      }
+    }
+
+    return maxFunction;
+  }
+
+  function setGKRating(player) {
+    return Math.min(99, Math.round((player.GKReflexes*0.15) + (player.GKDiving*0.15) +
+            (player.GKPositioning*0.15) + (player.GKHandling*0.1) + (player.GKKicking*0.1) +
+            (player.agility*0.08) + (player.reactions*0.08) + (player.composure*0.05) +
+            (player.shortPassing*0.05) + (player.longPassing*0.05) + (player.vision*0.04) + (player.internationalReputation)))
+  }
+
+  function setCBRating(player) {
+    return Math.min(99, Math.round((player.defensiveAwareness*0.15) + (player.standingTackle*0.15) +
+            (player.slidingTackle*0.15) + (player.headingAccuracy*0.1) + (player.strength*0.1) +
+            (player.aggression*0.08) + (player.interceptions*0.08) + (player.shortPassing*0.05) +
+            (player.ballControl*0.05) + (player.reactions*0.05) + (player.jumping*0.04) + (player.internationalReputation)))
+  }
+
+  function setLBRBRating(player) {
+    return Math.min(99, Math.round((player.slidingTackle*0.13) + (player.standingTackle*0.12) +
+            (player.interceptions*0.12) + (player.defensiveAwareness*0.1) + (player.stamina*0.08) +
+            (player.reactions*0.08) + (player.crossing*0.07) + (player.headingAccuracy*0.07) +
+            (player.ballControl*0.07) + (player.shortPassing*0.06) + (player.sprintSpeed*0.05) +
+            (player.aggression*0.05) + (player.internationalReputation)))
+  }
+
+  function setLWBRWBRating(player) {
+    return Math.min(99, Math.round((player.standingTackle*0.11) + (player.slidingTackle*0.1) +
+            (player.crossing*0.1) + (player.shortPassing*0.1) + (player.ballControl*0.1) +
+            (player.interceptions*0.1) + (player.defensiveAwareness*0.09) + (player.stamina*0.08) +
+            (player.reactions*0.08) + (player.dribbling*0.07) + (player.sprintSpeed*0.04) +
+            (player.agility*0.03) + (player.internationalReputation)))
+  }
+
+  function setCDMRating(player) {
+    return Math.min(99, Math.round((player.shortPassing*0.13) + (player.interceptions*0.13) +
+            (player.longPassing*0.11) + (player.defensiveAwareness*0.1) + (player.standingTackle*0.1) +
+            (player.ballControl*0.09) + (player.reactions*0.09) + (player.vision*0.08) +
+            (player.stamina*0.06) + (player.strength*0.06) + (player.aggression*0.05) + (player.internationalReputation)))
+  }
+
+  function setCMRating(player) {
+    return Math.min(99, Math.round((player.shortPassing*0.15) + (player.longPassing*0.13) +
+            (player.vision*0.12) + (player.ballControl*0.1) + (player.dribbling*0.09) +
+            (player.reactions*0.08) + (player.interceptions*0.08) + (player.positioning*0.08) +
+            (player.standingTackle*0.06) + (player.stamina*0.06) + (player.longShots*0.05) + (player.internationalReputation)))
+  }
+
+  function setLMRMRating(player) {
+    return Math.min(99, Math.round((player.crossing*0.14) + (player.dribbling*0.14) +
+            (player.shortPassing*0.12) + (player.ballControl*0.12) + (player.longPassing*0.08) +
+            (player.vision*0.08) + (player.reactions*0.07) + (player.positioning*0.07) +
+            (player.stamina*0.05) + (player.acceleration*0.05) + (player.sprintSpeed*0.05) +
+            (player.agility*0.03) + (player.internationalReputation)))
+  }
+
+  function setCAMRating(player) {
+    return Math.min(99, Math.round((player.shortPassing*0.16) + (player.vision*0.16) +
+            (player.ballControl*0.13) + (player.positioning*0.12) + (player.dribbling*0.11) +
+            (player.reactions*0.08) + (player.longShots*0.06) + (player.finishing*0.05) +
+            (player.shotPower*0.05) + (player.acceleration*0.04) + (player.agility*0.04) + (player.internationalReputation)))
+  }
+
+  function setLWRWRating(player) {
+    return Math.min(99, Math.round((player.crossing*0.16) + (player.dribbling*0.16) +
+            (player.ballControl*0.13) + (player.shortPassing*0.1) + (player.positioning*0.09) +
+            (player.acceleration*0.06) + (player.sprintSpeed*0.06) + (player.reactions*0.06) +
+            (player.agility*0.05) + (player.vision*0.05) + (player.finishing*0.04) +
+            (player.longShots*0.04) + (player.internationalReputation)))
+  }
+
+  function setLFCFRFRating(player) {
+    return Math.min(99, Math.round((player.finishing*0.12) + (player.positioning*0.12) +
+            (player.dribbling*0.11) + (player.ballControl*0.11) + (player.shotPower*0.1) +
+            (player.longShots*0.1) + (player.reactions*0.1) + (player.shortPassing*0.06) +
+            (player.headingAccuracy*0.05) + (player.vision*0.05) + (player.acceleration*0.04) +
+            (player.sprintSpeed*0.04) + (player.internationalReputation)))
+  }
+
+  function setSTRating(player) {
+    return Math.min(99, Math.round((player.finishing*0.2) + (player.positioning*0.12) +
+            (player.headingAccuracy*0.1) + (player.shotPower*0.1) + (player.reactions*0.1) +
+            (player.dribbling*0.08) + (player.ballControl*0.08) + (player.volleys*0.05) +
+            (player.longShots*0.05) + (player.acceleration*0.05) + (player.sprintSpeed*0.04) +
+            (player.strength*0.03) + (player.internationalReputation)))
+  }
 </script>
 
 <main>
   {#if !showDataItem}
     <FrontPage on:fileRead={handleFileRead}/>
   {:else}
-    {#each players.slice(1) as player} <!-- Assuming each player has a unique id -->
-      <div on:click={() => handleCompactViewClick(player)} style="cursor: pointer;">
-        <CompactViewItem player={player} arrowState={playerStates[player.lastName] ? playerStates[player.lastName].arrowState : true} />
-      </div>
+    {#each players.slice(1) as player}
+      {#if getHighestRatingFunction(player) === 'GK'}
+        <div on:click={() => handleCompactViewClick(player)} style="cursor: pointer;">
+          <CompactViewItemGoalkeeper player={player} arrowState={playerStates[player.lastName] ? playerStates[player.lastName].arrowState : true} />
+        </div>
+      {:else}
+        <div on:click={() => handleCompactViewClick(player)} style="cursor: pointer;">
+          <CompactViewItemPlayer player={player} arrowState={playerStates[player.lastName] ? playerStates[player.lastName].arrowState : true} />
+        </div>
+      {/if}
       {#if selectedPlayer === player}
         <ExpandedViewItem player={player} />
       {/if}
