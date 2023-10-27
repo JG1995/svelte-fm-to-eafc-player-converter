@@ -18,7 +18,7 @@
 <div class="h-[80px] w-[1014px] bg-[#6B728E] grid grid-cols-[70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px,70px]
 gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
     <div class="col-span-1 flex flex-col items-center justify-center">
-        <img src={arrowState ? "/expand-arrow-white.png" : "/contract-arrow-white.png"} alt="expand" class="ml-2 h-5 w-5" />
+        <img src={arrowState ? "/svelte-fm-to-eafc-player-converter/expand-arrow-white.png" : "/svelte-fm-to-eafc-player-converter/contract-arrow-white.png"} alt="expand" class="ml-2 h-5 w-5" />
     </div>
 
     <div class="col-span-3 flex flex-col items-center justify-center">
@@ -54,7 +54,7 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             <span>WF:</span>
             <div class="flex items-center">
                 <span>{player.weakFoot}</span>
-                <img src="/star.png" alt="star" class="ml-2 h-2 w-2" /> <!-- Adjust the height and width as needed -->
+                <img src="/svelte-fm-to-eafc-player-converter/star.png" alt="star" class="ml-2 h-2 w-2" /> <!-- Adjust the height and width as needed -->
             </div>
         </div>
 
@@ -62,7 +62,7 @@ gap-[14px] text-white font-pt-sans mb-[15px] items-center rounded">
             <span>Skills:</span>
             <div class="flex items-center">
                 <span>{player.skillMoves}</span>
-                <img src="/star.png" alt="star" class="ml-2 h-2 w-2" /> <!-- Adjust the height and width as needed -->
+                <img src="/svelte-fm-to-eafc-player-converter/star.png" alt="star" class="ml-2 h-2 w-2" /> <!-- Adjust the height and width as needed -->
             </div>
         </div>
     </div>
