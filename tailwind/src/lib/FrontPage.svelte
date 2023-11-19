@@ -47,7 +47,7 @@
             <h1 class="text-nunito font-black text-5xl mb-4">FM to EAFC Player Converter</h1>
 
             <ul class="list-decimal list-inside w-2/3 mb-6 font-pt-sans text-xs">
-                <li class="mb-2"><a href="https://www.mediafire.com/file/q47rtsnam2u3yql/FMtoEAFCPlayerConverterViews.zip/file">Download and extract this .ZIP file containing the FM Views you will need. Place them in "\Documents\Sports Interactive\Football Manager 2023\views".</a></li>
+                <li class="mb-2"><a href="https://www.mediafire.com/file/q47rtsnam2u3yql/FMtoEAFCPlayerConverterViews.zip/file">Download and extract this .ZIP file containing the FM Views you will need. Place them in "\Documents\Sports Interactive\Football Manager 2024\views".</a></li>
                     <li class="mb-2"><strong>If exporting a Squad:</strong> Go to your squad-panel, click "View -> Custom -> Import View", and select "Stat Conversion View - Squad - No IGE" from the list.</li>
                     <li class="mb-2"><strong>If exporting a Shortlist:</strong> Go to your shortlist-panel, click "View -> Custom -> Import View", and select "Stat Conversion View - Shortlist - No IGE" from the list.</li>
                 <li class="mb-2">Select the newly imported view from the drop-down menu.</li>
